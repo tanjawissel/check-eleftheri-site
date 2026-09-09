@@ -515,7 +515,7 @@
         </div>
         <label class="consent">
           <input type="checkbox" id="consent" name="OPT_IN" value="1" required />
-          <span>Ich möchte den Freiheits‑Check und die wöchentlichen Impulse per E‑Mail erhalten. Meine Daten werden nicht weitergegeben. Mehr in der <a href="#datenschutz">Datenschutzerklärung</a>.</span>
+          <span>Ich möchte den Freiheits‑Check und die wöchentlichen Impulse per E‑Mail erhalten. Meine Daten werden nicht weitergegeben. Mehr in der <a href="/datenschutz/" target="_blank" rel="noopener">Datenschutzerklärung</a>.</span>
         </label>
         <span class="err" data-for="consent"></span>
 
@@ -591,7 +591,7 @@
 
 </main>
 
-<footer class="site-footer" id="datenschutz">
+<footer class="site-footer">
   <div class="wrap footer-inner">
     <div class="footer-brand">
       <svg class="brand-mark" viewBox="0 0 200 200" aria-hidden="true">
@@ -606,11 +606,11 @@
       <p class="footer-tag">ELEFTHERI — „die Freie". Ich habe neu angefangen. Du kannst es auch.</p>
     </div>
     <nav class="footer-links" aria-label="Rechtliches">
-      <a href="#datenschutz">Datenschutzerklärung</a>
-      <a href="#impressum">Impressum</a>
-      <a href="mailto:mail@eleftheri.com">mail@eleftheri.com</a>
+      <a href="/datenschutz/">Datenschutzerklärung</a>
+      <a href="/impressum/">Impressum</a>
+      <a class="cloak" data-u="mail" data-d="eleftheri.com" href="/impressum/">Kontakt</a>
     </nav>
-    <p class="footer-legal" id="impressum">
+    <p class="footer-legal">
       © 2026 ELEFTHERI LLC · Albuquerque, NM · Transparenz: Über manche der
       vorgestellten Möglichkeiten kann ELEFTHERI eine Provision erhalten.
     </p>
@@ -619,6 +619,19 @@
 
 <a class="mobile-cta" href="#anfordern" id="mobileCta">Freiheits‑Check holen</a>
 
+<script>
+/* E-Mail-Adresse erst im Browser zusammensetzen — hält Harvester-Bots fern */
+(function () {
+  var els = document.querySelectorAll('a.cloak');
+  for (var i = 0; i < els.length; i++) {
+    var a = els[i];
+    var addr = a.getAttribute('data-u') + String.fromCharCode(64) + a.getAttribute('data-d');
+    a.href = 'mailto:' + addr;
+    a.textContent = addr;
+    a.removeAttribute('class');
+  }
+})();
+</script>
 <script src="script.js"></script>
 </body>
 </html>
