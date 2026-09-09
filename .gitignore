@@ -1,5 +1,7 @@
-# Lokale / interne Dateien – nicht auf die öffentliche Seite
-Freiheits-Check.pdf
+# Lokale / interne Dateien – nicht auf die oeffentliche Seite
 Freiheits-Check_druckvorlage.html
 .DS_Store
 Thumbs.db
+
+# Redakteurs-Kopie im Wurzelverzeichnis – die ausgelieferte Datei liegt in freiheits-check/
+/Freiheits-Check.pdf
