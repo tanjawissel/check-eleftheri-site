@@ -1,0 +1,4 @@
+# Für das Hosting bei cyon (LiteSpeed). GitHub Pages ignoriert diese Datei.
+# Die Weiterleitung auf https ist eine Einstellung der Website in my.cyon, nicht hier.
+# RewriteEngine On verhindert, dass die WordPress-Regeln aus public_html hier mitwirken.
+RewriteEngine On
